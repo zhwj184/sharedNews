@@ -7,7 +7,9 @@ Sharelink::Application.routes.draw do
   resources :categories
   
   root :to => "welcome#index"
-
+  
+  
+  match 'welcome' => 'welcome#index'
   match 'welcome/:catid' => 'welcome#index'
   
   # The priority is based upon order of creation:

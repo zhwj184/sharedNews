@@ -1,3 +1,72 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.layout{
+  width: 980px;
+  margin: 0 auto;
+  padding-top: 30px;
+  font: normal 24px/32px "Microsoft YaHei";
+}
+
+.layout h1{
+  color:#c00;
+}
+.layout a{
+   text-decoration: none;
+}
+
+.layout table.category td{
+  padding-left: 10px;
+}
+
+.layout table.category td.catitem,.layout table.category td.catitem a{
+  color: #3a87ad;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.layout table.category td.selected a{
+  color: #c00;
+}
+
+.layout table.category a:hover{
+  color:#c00;
+  font-color: #333;
+  background-color: #c00;
+}
+
+
+ul{
+  list-style: none;
+}
+
+ul li{
+  display: block;
+  border-bottom: #ccc 1px dotted;
+  padding: 10px 5px;
+}
+
+ul li .title{
+  color: #999;
+  width: 100%;
+  height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 100%;
+  font-weight: normal;
+  display: block;
+}
+ul li .title span.time{
+  padding-left: 20px;
+}
+ul li .content{
+  width: 100%;
+  height: 54px;
+  overflow: hidden;
+}
+
+.layout .page{
+  text-align: center;
+}

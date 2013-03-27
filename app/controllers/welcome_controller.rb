@@ -6,15 +6,22 @@ class WelcomeController < ApplicationController
   def index
     
     @catid = params[:catid]
+    if @catid==nil
+      @catid = 0.to_i
+    else
+      @catid = @catid.to_i
+    end
+    
+    
     @pageindex = params[:pageindex].to_i
-    if !@pageindex
+    if @pageindex==nil || @pageindex <= 1
       @pageindex = 1.to_i
     end
-    if @catid
+    if @catid > 0
       @links = Link.where("catid =?", params[:catid]).order("gmt_modified DESC, id desc").limit(2).offset((@pageindex-1)*2)
       @count = Link.where("catid =?", params[:catid]).count
     else
-      @links = Link.all
+      @links = Link.order("gmt_modified DESC, id desc").limit(2).offset((@pageindex-1)*2)
       @count = Link.count
     end
 
@@ -32,6 +39,7 @@ class WelcomeController < ApplicationController
       format.json { render json: @count}
       format.json { render json: @totalpage}
       format.json { render json: @pageindex}
+      format.json { render json: @catid}
     end
   end
 

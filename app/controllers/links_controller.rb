@@ -25,10 +25,11 @@ class LinksController < ApplicationController
   # GET /links/new.json
   def new
     @link = Link.new
-
+    @categories = Category.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @link }
+      format.json { render json: @categories }
     end
   end
 

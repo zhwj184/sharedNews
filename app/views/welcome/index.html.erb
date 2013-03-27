@@ -1,47 +1,31 @@
+<div class="layout">
+	<h1>极客头条</h1>
+	
+	<table class="category">
+	  <tr>
+	  	<td class="catitem">分类列表：</td>
+	  	<td class="catitem"><a href="/">All</a></td>
+	  	<% @categories.each do |category| %>
+	    <td class="catitem <% if category.id.to_i == @catid %> selected <% end %>"><a href="/welcome/<%= category.id %>"><%= category.name %></a></td>
+	    <% end %>
+	  </tr>
+	</table>
 
-<%= link_to "IT技术分享" , categories_path %>
-
-<h1>Listing categories</h1>
-
-<table>
-  <tr>
-  	<td><a href="/">All</a></td>
-  	<% @categories.each do |category| %>
-    <td ><a href="/welcome/<%= category.id %>"><%= category.name %></a></td>
-    <% end %>
-  </tr>
-</table>
-
-<br />
-
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Url</th>
-    <th>Content</th>
-    <th>Gmt created</th>
-    <th>View</th>
-    <th>Gmt modified</th>
-  </tr>
-
-<% @links.each do |link| %>
-  <tr>
-    <td><%= link.id %></td>
-    <td><%= link.name %></td>
-    <td><%= link.url %></td>
-    <td><%= link.content %></td>
-    <td><%= link.gmt_created %></td>
-    <td><%= link.view %></td>
-    <td><%= link.gmt_modified %></td>
-  </tr>
-<% end %>
-</table>
-<p>
-
-当前第<%= @pageindex %>页
-<% if @pageindex > 1 %><a href="">上一页</a> <% else %>上一页<% end %>
-<% if @totalpage > @pageindex %><a href="">下一页</a> <% else %> 下一页 <% end %>
-总共<%= @totalpage %>页
-</p>
-<br />
+	<br />
+	
+	<ul class="linklist">
+		<% @links.each do |link| %>
+		<li>
+			<div class="title"><a href="<%= link.url %>" target="_blank"> <%= link.name %></a><span class="time"><%= link.gmt_created.strftime("%Y-%m-%d")  %></span></div>
+			<div class="content"><a href=""><%= link.content %></a></div>
+		</li>
+		<% end %>
+	</ul>
+	<div class="page">
+	当前第<%= @pageindex %>页
+	<% if @pageindex > 1 %><a href="/welcome/<%=@catid%>?pageindex=<%=@pageindex-1%>">上一页</a> <% else %>上一页<% end %>
+	<% if @totalpage > @pageindex %><a href="/welcome/<%=@catid%>?pageindex=<%=@pageindex+1%>">下一页</a> <% else %> 下一页 <% end %>
+	总共<%= @totalpage %>页
+	</div>
+	<br />
+</div>
