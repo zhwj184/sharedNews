@@ -1,0 +1,49 @@
+<%= form_for(@link) do |f| %>
+  <% if @link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
+
+      <ul>
+      <% @link.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.number_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :gmt_created %><br />
+    <%= f.datetime_select :gmt_created %>
+  </div>
+  <div class="field">
+    <%= f.label :view %><br />
+    <%= f.number_field :view %>
+  </div>
+  <div class="field">
+    <%= f.label :gmt_modified %><br />
+    <%= f.datetime_select :gmt_modified %>
+  </div>
+  <div class="field">
+    <%= f.label :catid %><br />
+    <%= f.number_field :catid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

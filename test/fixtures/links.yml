@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  name: MyString
+  url: MyString
+  content: MyText
+  gmt_created: 2013-03-27 18:20:16
+  view: 1
+  gmt_modified: 2013-03-27 18:20:16
+  catid: 1
+
+two:
+  id: 1
+  name: MyString
+  url: MyString
+  content: MyText
+  gmt_created: 2013-03-27 18:20:16
+  view: 1
+  gmt_modified: 2013-03-27 18:20:16
+  catid: 1

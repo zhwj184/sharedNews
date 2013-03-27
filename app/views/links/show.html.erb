@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @link.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @link.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @link.url %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @link.content %>
+</p>
+
+<p>
+  <b>Gmt created:</b>
+  <%= @link.gmt_created %>
+</p>
+
+<p>
+  <b>View:</b>
+  <%= @link.view %>
+</p>
+
+<p>
+  <b>Gmt modified:</b>
+  <%= @link.gmt_modified %>
+</p>
+
+<p>
+  <b>Catid:</b>
+  <%= @link.catid %>
+</p>
+
+
+<%= link_to 'Edit', edit_link_path(@link) %> |
+<%= link_to 'Back', links_path %>
